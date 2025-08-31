@@ -1,0 +1,188 @@
+/**
+ * =====================================
+ *         UI Design Guide
+ * =====================================
+ * 
+ * Project: FinanceFlow - Personal Finance Assistant
+ * Type: Financial SaaS Application
+ * 
+ * Design Language
+ * Style: Modern · Clean · Trustworthy · Approachable
+ * Vision: Making finance management comfortable and stress-free for beginners
+ * 
+ * Philosophy:
+ * Financial data should feel safe and approachable, not intimidating. 
+ * We use calming greens for positive financial states, soft blues for 
+ * neutral information, and warm accents to build trust. Clean typography 
+ * and generous spacing create a breathing room that reduces financial anxiety.
+ * =====================================
+ * 
+ * **IMPORTANT** Never break the original structure, only add highly customized new styles
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors - calm and professional */
+    --background: 250 100% 99%;
+    --foreground: 210 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 15%;
+    
+    /* Primary - trustworthy green for financial success */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - soft blue-gray for balance */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 15% 25%;
+    
+    /* Muted tones for subtle elements */
+    --muted: 210 15% 96%;
+    --muted-foreground: 210 10% 45%;
+    
+    /* Accent - warm blue for highlights */
+    --accent: 213 94% 68%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive - gentle red for expenses */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 210 20% 90%;
+    --input: 210 20% 92%;
+    --ring: 142 76% 36%;
+    
+    /* Financial chart colors - intuitive and accessible */
+    --chart-1: 142 76% 36%;  /* Income/Savings - Green */
+    --chart-2: 0 72% 51%;    /* Expenses - Red */
+    --chart-3: 213 94% 68%;  /* Investments - Blue */
+    --chart-4: 45 93% 58%;   /* Entertainment - Orange */
+    --chart-5: 262 52% 47%;  /* Bills - Purple */
+    
+    /* Financial status colors */
+    --success: 142 76% 36%;
+    --warning: 45 93% 58%;
+    --info: 213 94% 68%;
+    
+    --radius: 0.75rem
+  ;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%}
+  .dark {
+    /* Dark mode - maintain comfort and trust */
+    --background: 220 15% 6%;
+    --foreground: 210 10% 95%;
+    --card: 220 15% 8%;
+    --card-foreground: 210 10% 95%;
+    --popover: 220 15% 8%;
+    --popover-foreground: 210 10% 95%;
+    
+    /* Primary - softer green for dark mode */
+    --primary: 142 65% 45%;
+    --primary-foreground: 220 15% 6%;
+    
+    /* Secondary - darker blue-gray */
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 210 10% 85%;
+    
+    /* Muted tones adjusted for dark */
+    --muted: 220 15% 12%;
+    --muted-foreground: 210 8% 60%;
+    
+    /* Accent - bright blue for visibility */
+    --accent: 213 94% 68%;
+    --accent-foreground: 220 15% 6%;
+    
+    /* Destructive - muted red */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 220 15% 18%;
+    --input: 220 15% 15%;
+    --ring: 142 65% 45%;
+    
+    /* Dark mode chart colors - vibrant but comfortable */
+    --chart-1: 142 65% 45%;  /* Income/Savings - Soft Green */
+    --chart-2: 0 65% 55%;    /* Expenses - Muted Red */
+    --chart-3: 213 80% 65%;  /* Investments - Bright Blue */
+    --chart-4: 45 85% 60%;   /* Entertainment - Warm Orange */
+    --chart-5: 262 45% 55%;  /* Bills - Soft Purple */
+    
+    /* Financial status colors for dark mode */
+    --success: 142 65% 45%;
+    --warning: 45 85% 60%;
+    --info: 213 80% 65%
+  ;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%}
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Financial status indicators */
+  .status-positive {
+    @apply text-emerald-600 dark:text-emerald-400;
+  }
+  
+  .status-negative {
+    @apply text-red-600 dark:text-red-400;
+  }
+  
+  .status-neutral {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+  
+  /* Financial cards with subtle shadows */
+  .finance-card {
+    @apply bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  /* Amount displays with proper formatting */
+  .amount-large {
+    @apply text-3xl font-bold tracking-tight;
+  }
+  
+  .amount-medium {
+    @apply text-xl font-semibold;
+  }
+  
+  .amount-small {
+    @apply text-base font-medium;
+  }
+  
+  /* Progress bars for financial goals */
+  .progress-background {
+    @apply bg-muted rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply bg-gradient-to-r from-emerald-500 to-green-600 h-full transition-all duration-500 ease-out;
+  }
+}
