@@ -33,3 +33,57 @@ Usando **bun** (recomendado):
 
 ```bash
 bun install
+
+
+npm install
+2. Inicia el servidor de desarrollo
+bash
+Copiar código
+bun dev
+# o
+npm run dev
+3. Compila para producción
+bash
+Copiar código
+bun run build
+# o
+npm run build
+💻 Desarrollo
+🔗 Servidor local: http://localhost:5173
+
+🧠 Basado en patrones modernos de React con manejo tipado en TypeScript
+
+🎨 Interfaz responsiva usando Tailwind CSS
+
+🧩 Componentes personalizables con shadcn/ui
+
+📁 Estructura del Proyecto (base)
+text
+Copiar código
+FinancialClarityCompass/
+├── src/
+│   ├── components/        # UI reutilizable
+│   ├── pages/             # Secciones o pantallas principales
+│   ├── assets/            # Íconos, imágenes o visuales
+│   ├── routes.tsx         # Definición de rutas
+│   ├── App.tsx            # Componente raíz
+│   └── main.tsx           # Punto de entrada con Vite
+├── public/
+├── tailwind.config.js
+├── tsconfig.json
+└── index.html
+🧭 Propósito del Proyecto
+Este proyecto puede servir como:
+
+Visualizador de flujos financieros personales o empresariales
+
+Módulo visual dentro de un dashboard más amplio
+
+Base para herramientas de educación financiera o simuladores de finanzas
+
+👩‍💻 Autora
+Creado por frontenddeveloper2025dev, como ejercicio visual y técnico centrado en la claridad financiera y el diseño limpio con tecnologías modernas.
+
+
+
+
